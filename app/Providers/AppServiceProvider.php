@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\SiteSetting;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
 
         // Réglages du site + images de marque, disponibles dans toutes les vues
         View::composer(['layouts.*', 'frontend.*', 'admin.*', 'errors.*'], function ($view) {
