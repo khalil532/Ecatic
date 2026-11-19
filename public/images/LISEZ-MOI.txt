@@ -1,0 +1,6 @@
+IMAGES OFFICIELLES ECATIC (déjà incluses)
+logo.png      -> logo officiel (navigation, pied de page, favicon, connexion admin)
+banner-1.jpg  -> bannière affichée dans la section d'accueil (HERO) + image de partage (Open Graph)
+banner-2.jpg  -> bannière pleine largeur de la section « Le Sénégal et le commerce international »
+Pour les remplacer : gardez les mêmes noms (extensions png, jpg, jpeg, webp, svg acceptées).
+Une version plus grande (1920 px de large) donnerait un rendu plus net sur grand écran.
