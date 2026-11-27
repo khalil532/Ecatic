@@ -19,20 +19,13 @@ class AdminUserSeeder extends Seeder
             return;
         }
 
-        $attributes = [
-            'name' => env('ADMIN_NAME', 'Administrateur ECATIC'),
-            'email' => $email,
-            'password' => Hash::make($password),
-            'is_admin' => true,
-        ];
-
-        $admin = User::where('is_admin', true)->first();
-
-        if ($admin) {
-            $admin->update($attributes);
-            return;
-        }
-
-        User::updateOrCreate(['email' => $email], $attributes);
+        User::updateOrCreate(
+            ['email' => $email],
+            [
+                'name' => env('ADMIN_NAME', 'Administrateur ECATIC'),
+                'password' => Hash::make($password),
+                'is_admin' => true,
+            ]
+        );
     }
 }
